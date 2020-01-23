@@ -1,8 +1,9 @@
-import { QUESTIONS_JSON } from '../utils/constants';
 import { formatJSON } from '../utils';
 
-const questions = (state = formatJSON(QUESTIONS_JSON, 'questions'), action) => {
+const questions = (state = [], action) => {
   switch (action.type) {
+    case 'SET_QUESTIONS_DATA':
+      return formatJSON(action.data, 'questions');
     case 'TOGGLE_STATUS':
       return state.map(question =>
         question.id === action.id ? { ...question, status: action.status } : question

@@ -1,8 +1,112 @@
-.exam-page {
-  max-width: 1024px;
-  margin: 0 auto;
+$breakpoint-tablet: 768px;
+$element-padding-small: 10px;
+$element-padding-medium: 15px;
+$theme-color-white: white;
+$theme-color-light: #f5f5f5;
+$theme-color-olive: darkolivegreen;
+$theme-color-red: darkred;
+$theme-color-darkgray: darkslategrey;
+$border-light: lightgray;
 
-  .results {
-    color: grey;
+body {
+  background-color: $theme-color-light;
+}
+
+.exam-page {
+  box-sizing: border-box;
+  max-width: 1024px;
+  margin: 50px auto;
+  padding: $element-padding-medium;
+  background-color: $theme-color-white;
+
+  .question-list {
+    width: 100%;
+    box-sizing: border-box;
+    padding: $element-padding-medium;
+
+    &__item {
+      p {
+        display: flex;
+        padding-right: $element-padding-medium;
+      }
+
+      ul {
+        display: flex;
+        flex-wrap: wrap;
+        padding: 0 0 0 $element-padding-medium;
+        margin: 0;
+        list-style-type: none;
+        border-top: 1px solid $border-light;
+      }
+
+      &--correct {
+        p::after {
+          content: '';
+          display: block;
+          width: 15px;
+          height: 15px;
+          margin-left: auto;
+          border-radius: 50%;
+          background-color: $theme-color-olive;
+        }
+
+        ul {
+          border-top: 1px solid $theme-color-olive;
+        }
+      }
+
+      &--incorrect {
+        p::after {
+          content: '';
+          display: block;
+          width: 15px;
+          height: 15px;
+          margin-left: auto;
+          border-radius: 50%;
+          background-color: $theme-color-red;
+        }
+
+        ul {
+          border-top: 1px solid $theme-color-red;
+        }
+      }
+    }
+
+    &__variant {
+      box-sizing: border-box;
+      flex: 0 100%;
+      padding: $element-padding-medium;
+
+      @media (min-width: $breakpoint-tablet) {
+        flex: 0 50%;
+      }
+    }
   }
+
+  &-submit {
+    display: flex;
+    padding: $element-padding-medium;
+
+    input[type=submit] {
+      margin-left: auto;
+      padding: $element-padding-small $element-padding-medium;
+      cursor: pointer;
+      border: none;
+      background-color: $theme-color-darkgray;
+      color: $border-light;
+
+      &:hover {
+        background-color: $theme-color-olive;
+      }
+    }
+  }
+
+  &-results {
+    font-size: 1.5em;
+  }
+}
+
+.request-status {
+  padding: $element-padding-medium 0;
+  color: $theme-color-darkgray;
 }

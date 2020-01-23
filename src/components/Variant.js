@@ -4,10 +4,10 @@ const Variant = (props) => {
   const { onChange, text } = props;
 
   return (
-    <li>
+    <li className="question-list__variant">
       <label>
-        {text}
         <input type="checkbox" onChange={onChange} />
+        {text}
       </label>
     </li>
   );

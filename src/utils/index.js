@@ -6,12 +6,12 @@ export const fakeRequest = (ms, result) =>
       }, ms)
   });
 
-export const formatJSON = (jsonStr, key) => {
-  const arr = JSON.parse(jsonStr)[key];
+export const formatJSON = (data, key) => {
+  const arr = data[key];
   
   if (Array.isArray(arr)) {
     return arr.map((item) => {
-      item.status = -1;
+      item.status = null;
       item.selectedVariants = [];
       return item;
     });
