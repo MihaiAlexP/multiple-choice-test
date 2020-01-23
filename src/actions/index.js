@@ -9,3 +9,9 @@ export const toggleVariant = (id, variant) => ({
   id,
   variant
 });
+
+export const updateResults = (totalCount, correctCount) => ({
+  type: 'UPDATE_RESULTS',
+  totalCount,
+  correctCount
+});

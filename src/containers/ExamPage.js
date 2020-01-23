@@ -1,15 +1,18 @@
 import { connect } from 'react-redux';
-import { toggleVariant } from '../actions';
+import { toggleStatus, toggleVariant, updateResults } from '../actions';
 
 import QuestionList from '../components/QuestionList';
 import '../styles/ExamPage.scss';
 
 const mapStateToProps = state => ({
-  questions: state
+  questions: state.questions,
+  results: state.results
 });
 
 const mapDispatchToProps = dispatch => ({
-  toggleVariant: (id, variant) => dispatch(toggleVariant(id, variant))
+  toggleStatus: (id, status) => dispatch(toggleStatus(id, status)),
+  toggleVariant: (id, variant) => dispatch(toggleVariant(id, variant)),
+  updateResults: (totalCount, correctCount) => dispatch(updateResults(totalCount, correctCount))
 });
 
 export default connect(

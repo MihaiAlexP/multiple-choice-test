@@ -1,0 +1,2 @@
+export const QUESTIONS_JSON = '{"questions":[{"id":0,"text":"Question #1","variants":[{"id":0,"text":"Q1 Variant #1"},{"id":1,"text":"Q1 Variant #2"},{"id":2,"text":"Q1 Variant #3"},{"id":3,"text":"Q1 Variant #4"}]},{"id":1,"text":"Question #2","variants":[{"id":0,"text":"Q2 Variant #1"},{"id":1,"text":"Q2 Variant #2"},{"id":2,"text":"Q2 Variant #3"},{"id":3,"text":"Q2 Variant #4"}]}]}';
+export const SUBMIT_RESULT_JSON = '{"questions":[{"id":0,"status":0},{"id":1,"status":1}]}';
